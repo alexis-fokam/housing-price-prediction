@@ -4,7 +4,7 @@
 Machine learning project predicting house sale prices based on 
 property features using regression techniques.
 
-**Best model: Random Forest — R² score: 0.87+**
+**Best model: Linear Regression + StandardScaler — R² score: 0.90+**
 
 ## Problem Statement
 Real estate investors and agencies need accurate price estimates 
@@ -19,18 +19,18 @@ based on key features like size, quality, location and age.
 - Jupyter Notebook
 
 ## Results
-| Model | R² Score | RMSE |
-|-------|----------|------|
-| Linear Regression | 0.75 | ~35,000 |
-| Random Forest | 0.87 | ~22,000 |
+| Model | R² Score (CV 5-fold) | R² Score (test) | RMSE |
+|-------|---------------------|-----------------|------|
+| Linear Regression + StandardScaler | **0.9048 ± 0.007** | **0.8881** | ~21,811 $ |
+| Random Forest | 0.8751 ± 0.008 | 0.8618 | ~25,043 $ |
 
 ## Key Features Used
-- GrLivArea (living area square feet)
+- TotalSF (total surface = GrLivArea + TotalBsmtSF) — feature engineerée
 - OverallQual (overall material quality)
-- TotalBsmtSF (basement area)
-- YearBuilt (construction year)
-- BedroomAbvGr (number of bedrooms)
-- FullBath (number of bathrooms)
+- GrLivArea (living area square feet)
+- TotalBath (total bathrooms — feature engineerée)
+- HouseAge (age at sale — feature engineerée)
+- GarageCars (garage capacity)
 
 ## Project Structure
 housing-price-prediction/
@@ -60,3 +60,14 @@ https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 Alexis Fokam — Data Scientist & ML Engineer
 Upwork: https://www.upwork.com/freelancers/~01b522970676cfcfb6
 LinkedIn: www.linkedin.com/in/alexis-fokam
+
+
+
+main                    # branche principale (code final propre)
+├── dev                 # développement général
+├── feature/data-exploration      # jour 1
+├── feature/data-cleaning         # jour 1
+├── feature/feature-engineering   # jour 2
+├── feature/model-training        # jour 2
+├── feature/model-evaluation      # jour 2
+└── feature/visualizations        # jour 3
