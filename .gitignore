@@ -1,1 +1,19 @@
-./analyse.txt
+# Environnement virtuel
+venv/
+env/
+.env
+
+# Jupyter
+.ipynb_checkpoints/
+*.pyc
+__pycache__/
+
+# Modèle sauvegardé (se régénère en exécutant le notebook)
+model.pkl
+
+# Fichiers personnels
+analyse.txt
+
+# OS
+.DS_Store
+Thumbs.db
