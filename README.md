@@ -59,8 +59,7 @@ https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 ## Author
 Alexis Fokam — Data Scientist & ML Engineer
 Upwork: https://www.upwork.com/freelancers/~01b522970676cfcfb6
-LinkedIn: www.linkedin.com/in/alexis-fokam
-
+LinkedIn: https://www.linkedin.com/in/alexis-fokam
 
 
 main                    # branche principale (code final propre)
