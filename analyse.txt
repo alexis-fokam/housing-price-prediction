@@ -1,0 +1,41 @@
+Observations du projet
+Le dataset
+1460 maisons, 81 colonnes — dataset Kaggle "House Prices" (Ames, Iowa, 2006–2010)
+38 colonnes numériques, 43 colonnes catégorielles
+
+Observation 1 — Variable cible SalePrice : distribution asymétrique
+
+min : 34,900$    médiane : 163,000$    moyenne : 180,921$    max : 755,000$
+La moyenne > médiane : il y a des maisons très chères qui tirent la moyenne vers le haut. La distribution est skewed à droite. Il faudra appliquer log(SalePrice) avant d'entraîner les modèles.
+
+
+Observation 2 — Valeurs manquantes à deux types différents
+NaN "logiques" (pas de vraie donnée manquante — NA = une catégorie) :
+
+Alley → NA = pas de ruelle
+PoolQC → NA = pas de piscine
+Fence → NA = pas de clôture
+MiscFeature → NA = rien de particulier
+Ces colonnes doivent être imputées avec la valeur "None", pas supprimées.
+
+NaN réels (données vraiment absentes) :
+
+LotFrontage → 259 NaN (17.7%) — à imputer par médiane ou par quartier
+MasVnrArea → 8 NaN — à imputer par 0
+GarageYrBlt → quelques NaN liés à l'absence de garage
+
+Observation 3 — MSSubClass est mal typé
+MSSubClass apparaît comme colonne numérique (valeurs : 20, 30, 60…) mais c'est un code catégoriel (type de maison). Il faut le convertir en str avant l'encodage.
+
+Observation 4 — Outliers probables
+LotArea : moyenne = 10,516 mais max = 215,245 → 20x la moyenne, outlier extrême
+GrLivArea : à surveiller (maisons très grandes)
+SalePrice : quelques maisons à 700k+ qui sont atypiques
+
+Observation 5 — Colonnes à très faible variance (quasi inutiles)
+Street : quasi toutes les maisons ont une rue pavée (Pave) — peu d'information
+Utilities : quasi toutes AllPub — à supprimer
+PoolArea : 75% des valeurs = 0 (peu de piscines)
+3SsnPorch, ScreenPorch : majorité à 0
+Observation 6 — Id est à supprimer
+Id est un simple identifiant séquentiel (1 à 1460), sans valeur prédictive.

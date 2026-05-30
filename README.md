@@ -60,3 +60,14 @@ https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques
 Alexis Fokam — Data Scientist & ML Engineer
 Upwork: https://www.upwork.com/freelancers/~01b522970676cfcfb6
 LinkedIn: www.linkedin.com/in/alexis-fokam
+
+
+
+main                    # branche principale (code final propre)
+├── dev                 # développement général
+├── feature/data-exploration      # jour 1
+├── feature/data-cleaning         # jour 1
+├── feature/feature-engineering   # jour 2
+├── feature/model-training        # jour 2
+├── feature/model-evaluation      # jour 2
+└── feature/visualizations        # jour 3
